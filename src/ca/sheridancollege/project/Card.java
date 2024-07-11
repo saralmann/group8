@@ -22,4 +22,18 @@ public abstract class Card {
     @Override
     public abstract String toString();
 
+    /**
+     * Compare this card with another card.
+     *
+     * @param card the card to compare with
+     * @return true if the cards are equal, false otherwise
+     */
+    public abstract boolean equals(Card card);
+
+    /**
+     * Get the rank of the card.
+     *
+     * @return the rank of the card
+     */
+    public abstract int getRank();
 }

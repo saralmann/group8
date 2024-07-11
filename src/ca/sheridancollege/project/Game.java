@@ -46,6 +46,24 @@ public abstract class Game {
     }
 
     /**
+     * Add a player to the game.
+     *
+     * @param player the player to add
+     */
+    public void addPlayer(Player player) {
+        this.players.add(player);
+    }
+
+    /**
+     * Remove a player from the game.
+     *
+     * @param player the player to remove
+     */
+    public void removePlayer(Player player) {
+        this.players.remove(player);
+    }
+
+    /**
      * Play the game. This might be one method or many method calls depending on your game.
      */
     public abstract void play();
@@ -55,4 +73,9 @@ public abstract class Game {
      */
     public abstract void declareWinner();
 
-}//end class
+    /**
+     * Display the current status of the game.
+     */
+    public abstract void displayStatus();
+
+}// end class

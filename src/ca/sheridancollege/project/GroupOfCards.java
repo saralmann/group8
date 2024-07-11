@@ -23,6 +23,7 @@ public class GroupOfCards {
 
     public GroupOfCards(int size) {
         this.size = size;
+        this.cards = new ArrayList<>(size);
     }
 
     /**
@@ -33,7 +34,30 @@ public class GroupOfCards {
     public ArrayList<Card> getCards() {
         return cards;
     }
-
+    
+    /**
+     * Add a card to the group
+     *
+     * @param card the card to add
+     */
+    public void addCard(Card card) {
+        if (cards.size() < size) {
+            cards.add(card);
+        } else {
+            System.out.println("Group is full, cannot add more cards.");
+        }
+    }
+    
+    /**
+     * Remove a card from the group
+     *
+     * @param card the card to remove
+     * @return true if the card was removed, false otherwise
+     */
+    public boolean removeCard(Card card) {
+        return cards.remove(card);
+    }
+    
     public void shuffle() {
         Collections.shuffle(cards);
     }
@@ -52,4 +76,10 @@ public class GroupOfCards {
         this.size = size;
     }
 
+    /**
+     * Sort the cards in the group
+     */
+    public void sort() {
+        Collections.sort(cards, (card1, card2) -> card1.toString().compareTo(card2.toString()));
+    }
 }//end class
